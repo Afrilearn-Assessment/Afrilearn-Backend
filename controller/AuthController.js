@@ -75,7 +75,7 @@ AuthController.Register=(req,res)=>{
                         //hash password
                         var hashedPassword = bcrypt.hashSync(password, 8);
                         data['password'] = hashedPassword;
-
+                        data['isActive']= false;
                         // console.log("data = ",data)
                         //run SQL create function
                         models.User.create(data)
